@@ -4,4 +4,4 @@ A Carousel using React and tailwind css
 
 # Screenshot
 
-![2023-03-17_21-50](https://user-images.githubusercontent.com/24318272/226074354-b0e74ec7-ecc6-487e-aab7-c074e3f4955d.png)
+![2023-03-23_21-54](https://user-images.githubusercontent.com/24318272/227396949-16142d10-370a-4cb4-8e28-7dfabbe36895.png)
