@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import CarouselItem from './CarouselItem';
+import {  AiOutlineDoubleLeft, AiOutlineDoubleRight } from "react-icons/ai";
+import { RxDotFilled } from "react-icons/rx";
 
 const Carousel = ({delay, children}) => {
   const [ currentIndex, setCurrentIndex ] = useState(0)
@@ -34,29 +36,23 @@ const Carousel = ({delay, children}) => {
             currentCarouselItem.length && currentCarouselItem.map(car => <CarouselItem key={car.id} title={car.title} description={car.description} icon={car.icon}/>)
           }
       </div>
-      <div className="flex justify-between py-4">
-        <button
-            className="button"
-            onClick={previousItem}
-          >
-            Previous
-        </button>
+      <div className="absolute top-[100px] -translate-x-0 translate-y-[50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+        <AiOutlineDoubleLeft size={30} onClick={previousItem}/>
+      </div>
+      <div className="absolute top-[100px] -translate-x-0 translate-y-[50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+        <AiOutlineDoubleRight size={30} onClick={nextItem}/>
+      </div>
+      <div className="flex justify-evenly py-4">
         {
           children.map((item, index) =>
-            <button
-              className="button w-8"
+            <RxDotFilled
               key={index}
               onClick={() => setCurrentIndex(index)}
-            >
-              {index +1}
-            </button>)
+              size={30}
+              className="cursor-pointer"
+            />
+            )
         }
-        <button
-          className="button"
-          onClick={nextItem}
-        >
-          Next
-        </button>
       </div>
     </div>
   )
